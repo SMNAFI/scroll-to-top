@@ -1,0 +1,11 @@
+.sub-container {
+    height: 80vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-container h1{
+    font-size: 48px;
+}
