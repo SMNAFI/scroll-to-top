@@ -7,7 +7,8 @@ const ScrollToTop = () => {
 
     const scrollToTop = () => {
         window.scrollTo({
-            top: 0
+            top: 0,
+            behavior: 'smooth'
         })
     }
 
@@ -22,7 +23,7 @@ const ScrollToTop = () => {
 
     return (
         <div className="scroll_container">
-           <button onClick={scrollToTop} className={"scroll_btn div_center " + (isVisible ? 'btn_show' : 'btn_hide')}>
+           <button onClick={scrollToTop} className={"scroll_btn " + (isVisible ? 'btn_show' : 'btn_hide')}>
                 <GoChevronUp/>
            </button>
         </div>

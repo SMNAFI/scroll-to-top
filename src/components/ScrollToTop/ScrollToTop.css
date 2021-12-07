@@ -6,8 +6,11 @@
 }
 
 .scroll_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
-    background-color: #FF0066;
+    background-color: lightskyblue;
     width: 55px;
     height: 55px;
     font-size: 30px;
@@ -16,7 +19,8 @@
 }
 
 .scroll_btn:hover {
-    background-color: #ff154f;
+    background: lightblue;
+    cursor: pointer;
 }
 
 .btn_show {
