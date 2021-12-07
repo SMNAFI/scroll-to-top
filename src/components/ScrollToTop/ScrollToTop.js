@@ -1,40 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import {MdKeyboardArrowUp} from 'react-icons/md';
-import './ScrollToTop.css'
+import React, { useState } from 'react';
+import './ScrollToTop.css';
+import { GoChevronUp } from "react-icons/go";
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const toggleVisibility = () => {
-        if(window.pageYOffset > 300) {
-            // console.log(window.pageYOffset);
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0
+        })
+    }
+
+    const scrollCheck = () => {
+        if(window.scrollY >= 300) {
             setIsVisible(true);
         } else {
             setIsVisible(false);
         }
     }
-
-    const scrollToTop = () => {
-        // console.log("okk");
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', toggleVisibility);
-
-        // for removing event listeners when the component unmount
-        return () => {
-            window.removeEventListener('scroll', toggleVisibility);
-        }
-    }, [])
+    window.addEventListener('scroll', scrollCheck);
 
     return (
         <div className="scroll_container">
-           <button onClick={scrollToTop} className={"scroll_btn "} style={{opacity: isVisible ? '100' : '0'}}>
-                <MdKeyboardArrowUp/>
+           <button onClick={scrollToTop} className={"scroll_btn div_center " + (isVisible ? 'btn_show' : 'btn_hide')}>
+                <GoChevronUp/>
            </button>
         </div>
     );
